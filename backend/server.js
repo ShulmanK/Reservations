@@ -17,6 +17,10 @@ app.use(cors())
 app.use(express.json())
 app.use('/reservations', reservationsRouter)
 
+app.get('/', async (req, res)=> {
+    res.json('You do not have permissions')
+})
+
 app.listen(PORT, () => {
   console.log('Server is ready on port', PORT)
 })

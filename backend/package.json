@@ -1,16 +1,23 @@
 {
-  "name": "backend",
+  "name": "reservations_backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd ../client && npm run start",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "",
+  "author": "sky95",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^6.2.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
